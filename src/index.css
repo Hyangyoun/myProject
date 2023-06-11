@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: "pretendard";
+  min-width: 1300px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
