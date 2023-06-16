@@ -22,6 +22,9 @@ const TextInput = styled.input`
     outline: none;
     font-size: 16px;
     font-family: "pretendard";
+    ::placeholder {
+        color: lightgray;
+    }
 `
 const SearchBtn = styled.button`
     width: 40px;

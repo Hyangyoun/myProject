@@ -12,6 +12,7 @@ const Warpdiv = styled.div`
     font-weight: bold;
     border-top: 1px solid #f1f1f1;
     z-index: 2;
+    background-color: white;
 `
 
 const CateBox = styled.div`
@@ -19,6 +20,7 @@ const CateBox = styled.div`
     width: 17%;
     height: 100%;
     align-items: center;
+    border-right: 1px solid #f1f1f1;
 
     & > p {
         font-size: 15px;

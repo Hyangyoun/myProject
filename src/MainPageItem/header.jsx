@@ -31,7 +31,6 @@ const Util = styled.div`
 `
 
 const Logo = styled.div`
-    background-color: green;
     position: relative;
     width: 180px;
     height: 52px;
@@ -57,11 +56,11 @@ function Header(props) {
         <Head>
             <HeaderInner>
                 <Logo>
-                    <img onClick={() => {navigate("/")}} src="image/main/logo.jpg" alt="같이한닭" />
+                    <img onClick={() => {navigate("/")}} src="image/main/logo.png" alt="같이한닭" />
                 </Logo>
                 <Util>
                     <ul>
-                        <UtillText>로그인</UtillText>
+                        <UtillText onClick={() => {navigate("/login")}}>로그인</UtillText>
                         <UtillText>마이페이지</UtillText>
                         <UtillText>장바구니</UtillText>
                         <UtillText>고객센터</UtillText>
