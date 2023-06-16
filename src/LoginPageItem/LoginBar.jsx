@@ -76,8 +76,8 @@ const CheckBox = styled.div`
         display: inline-block;
         box-sizing: border-box;
         width: 20px; height: 20px;
-        border-radius: 5px;
-        border: 1px solid black;
+        border-radius: 4px;
+        border: 1px solid #2e954e;
     }
 
     > input:checked + label::before{
