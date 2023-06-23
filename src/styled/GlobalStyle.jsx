@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: row;
     }
+
+    * {
+        flex-shrink: 0;
+    }
 `
 
 export default GlobalStyle

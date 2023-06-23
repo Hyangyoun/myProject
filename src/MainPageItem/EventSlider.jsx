@@ -112,7 +112,7 @@ const sliderList = [
         index: 0
     },
     {
-        src: "image/event/아임웰 곤약 닭가슴살 잡채볶음밥-1.jpg",
+        src: "image/event/아임웰 곤약 닭가슴살 잡채볶음밥-1.jpg",
         alt: "잡채볶음밥",
         index: 1
     },
@@ -122,7 +122,7 @@ const sliderList = [
         index: 2
     },
     {
-        src: "image/event/맛있닭 닭가슴살스테이크 오리지널-2.jpg",
+        src: "image/event/맛있닭 닭가슴살스테이크 오리지널-2.jpg",
         alt: "닭가슴살 스테이크",
         index: 3
     },
@@ -132,7 +132,7 @@ const sliderList = [
         index: 4
     },
     {
-        src: "image/event/맛있닭 스팀닭가슴살 고추맛-3.jpg",
+        src: "image/event/맛있닭 스팀닭가슴살 고추맛-3.jpg",
         alt: "스팀닭가슴살 고추맛",
         index: 5
     },
