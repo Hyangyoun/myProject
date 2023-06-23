@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ListButton from "./Listbutton";
+import { useNavigate } from "react-router-dom";
 
 const Warpdiv = styled.div`
     width: 100%;
@@ -72,13 +73,14 @@ const OnMouseCate = styled.nav`
 `
 
 function Categori(props){
+    const navigate = useNavigate()
     return (
         <Warpdiv>
             <CateBox>
                 <p>카테고리</p>
                 <OnMouseCate>
                     <ul>
-                        <li>닭가슴살</li>
+                        <li onClick={() =>  {navigate("/chickenBreast")}}>닭가슴살</li>
                         <li>간편식</li>
                         <li>도시락</li>
                         <li>샐러드</li>

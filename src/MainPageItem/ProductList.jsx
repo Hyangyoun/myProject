@@ -12,10 +12,10 @@ import styled from "styled-components";
     discount: discount rate
 */
 function ProductList(props) {
-    const itemList = props.itemList
+    const {itemList,number} = props
 
     return (
-        <PordList>
+        <PordList x={number}>
             {itemList.map((item) => {
                 return (
                     <li key={item.index}>
@@ -28,8 +28,10 @@ function ProductList(props) {
                             </div>
                             <div className="ProdName">{item.name}</div>
                             <span className="ProdPrice"><strong>{item.price}</strong>원</span>
-                            {item.beforePrice != null && <span className="ProdPrice BeforePrice">{item.beforePrice}</span>}
-                            {item.discount != null && <span className="Discount"><strong>{item.discount}</strong>%</span>}
+                            {item.beforePrice != null && <>
+                                <span className="ProdPrice BeforePrice">{item.beforePrice}</span>
+                                <span className="Discount"><strong>{item.discount}</strong>%</span>
+                            </> }
                         </div>
                     </li>
                 )
@@ -41,14 +43,16 @@ export default ProductList
 
 const PordList = styled.ul`
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0;
     > li {
         list-style: none;
         flex-direction: column;
         justify-content: center;
-        margin-bottom: 65px;
+        margin: 0 0 65px;
+        :not(:nth-child(${props => props.x}n)) {
+            margin-right: 20px;
+        }
     }
     .ImgDiv {
         width: 260px; height: 180px;
@@ -73,6 +77,7 @@ const PordList = styled.ul`
         margin-right: 5px;
     }
     .BeforePrice {
+        margin-left: 5px;
         text-decoration: line-through;
         color: #888888;
     }

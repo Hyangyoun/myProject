@@ -15,7 +15,11 @@ function MainPage(props) {
                 <EventProd>
                     <div>
                         <span>일일 특가</span>
-                        <ProductList itemList={prodList} />
+                        <ProductList itemList={discountProdList} number={3} />
+                    </div>
+                    <div>
+                        <span>신상품</span>
+                        <ProductList itemList={newProdList} number={3} />
                     </div>
                 </EventProd>
                 <SlideBar>
@@ -98,7 +102,7 @@ const SlideBar = styled.div`
     }
 `
 
-const prodList = [
+const discountProdList = [
     {
         img: "image/product_img/01/08/잇메이트 닭안심살 카레맛-1.jpg",
         name: "잇메이트 닭안심살 카레맛",
@@ -115,6 +119,35 @@ const prodList = [
         price: "28,400",
         beforePrice: "39,500원",
         discount: "28",
+        grade: 0,
+        reviews: 0,
+        index: 1
+    },
+    {
+        img: "image/product_img/06/01/닥터유프로 단백질파우더-1.jpg",
+        name: "닥터유프로 단백질 파우더",
+        price: "22,100",
+        beforePrice: "31,500원",
+        discount: "30",
+        grade: 0,
+        reviews: 0,
+        index: 2
+    },
+]
+
+const newProdList = [
+    {
+        img: "image/product_img/01/06/신선애 생닭가슴살-1.jpg",
+        name: "신선애 냉동 생 닭가슴살",
+        price: "9,500",
+        grade: 0,
+        reviews: 0,
+        index: 0
+    },
+    {
+        img: "image/product_img/07/01/뉴트리커먼 XL- 엘- 아르기닌-1.jpg",
+        name: "뉴트리커먼 XL-엘-아르기닌",
+        price: "18,900",
         grade: 0,
         reviews: 0,
         index: 1
