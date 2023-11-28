@@ -56,7 +56,7 @@ function Header(props) {
         <Head>
             <HeaderInner>
                 <Logo>
-                    <img onClick={() => {navigate("/")}} src="image/main/logo.png" alt="같이한닭" />
+                    <img onClick={() => {navigate("/")}} src="/image/main/logo.png" alt="같이한닭" />
                 </Logo>
                 <Util>
                     <ul>

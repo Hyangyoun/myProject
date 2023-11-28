@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Slider from "../MainPageItem/Slider";
 import Header from "../MainPageItem/header";
 import Footer from "../MainPageItem/Footer";
 import EventSlider from "../MainPageItem/EventSlider";
 import ProductList from "../MainPageItem/ProductList";
+import axios from "axios";
 
 function MainPage(props) {
+
+    const [discountProdList, setDiscountProdList] = useState([])
+    const [newProdList, setNewProdList] = useState([])
+    useEffect(() => {
+        axios.get("/product/discount")
+        .then((response) => {
+            setDiscountProdList(response.data)
+        })
+
+        axios.get("/product/new")
+        .then((response) => {
+            setNewProdList(response.data)
+        })
+    },[])
+
     return (
         <>
             <Header  />
@@ -23,13 +39,13 @@ function MainPage(props) {
                     </div>
                 </EventProd>
                 <SlideBar>
-                    <img className="DeliveryInfoImg" src="image/main/Frame 3.jpg" alt="배송안내" />
+                    <img className="DeliveryInfoImg" src="/image/main/Frame3.jpg" alt="배송안내" />
                     <EventBox>
                         <div>
                             <span>오직 </span> <span className="pointText">같이한닭</span><span>에서만!</span>
                             <span className="bottomText">깜짝 주말특가!</span>
                         </div>
-                        <img className="eventImg" src="image/main/이벤트.jpg" alt="이벤트" />
+                        <img className="eventImg" src="/image/main/event.jpg" alt="이벤트" />
                         <EventSlider />
                     </EventBox>
                 </SlideBar>
@@ -101,65 +117,3 @@ const SlideBar = styled.div`
         cursor: pointer;
     }
 `
-
-const discountProdList = [
-    {
-        img: "image/product_img/01/08/잇메이트 닭안심살 카레맛-1.jpg",
-        name: "잇메이트 닭안심살 카레맛",
-        price: "22,100",
-        beforePrice: "31,500원",
-        discount: "30",
-        grade: 0,
-        reviews: 0,
-        index: 0
-    },
-    {
-        img: "image/product_img/01/02/아임닭 수비드닭가슴살 칠리페퍼-1.jpg",
-        name: "아임닭 수비드닭가슴살 칠리페퍼",
-        price: "28,400",
-        beforePrice: "39,500원",
-        discount: "28",
-        grade: 0,
-        reviews: 0,
-        index: 1
-    },
-    {
-        img: "image/product_img/06/01/닥터유프로 단백질파우더-1.jpg",
-        name: "닥터유프로 단백질 파우더",
-        price: "22,100",
-        beforePrice: "31,500원",
-        discount: "30",
-        grade: 0,
-        reviews: 0,
-        index: 2
-    },
-]
-
-const newProdList = [
-    {
-        img: "image/product_img/01/06/신선애 생닭가슴살-1.jpg",
-        name: "신선애 냉동 생 닭가슴살",
-        price: "9,500",
-        grade: 0,
-        reviews: 0,
-        index: 0
-    },
-    {
-        img: "image/product_img/07/01/뉴트리커먼 XL- 엘- 아르기닌-1.jpg",
-        name: "뉴트리커먼 XL-엘-아르기닌",
-        price: "18,900",
-        grade: 0,
-        reviews: 0,
-        index: 1
-    },
-    {
-        img: "image/product_img/06/01/닥터유프로 단백질파우더-1.jpg",
-        name: "닥터유프로 단백질 파우더",
-        price: "22,100",
-        beforePrice: "31,500원",
-        discount: "30",
-        grade: 0,
-        reviews: 0,
-        index: 2
-    },
-]

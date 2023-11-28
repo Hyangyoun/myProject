@@ -1,36 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-/*상품 목록을 위한 컴포넌트 *itemList props를 받아야함*
-    src: product's image src
-    name: product's name
-    grade: product's grade
-    reviews: the number of product reviews
-    index: key value
-    // optional // *Recommended use of "beforePrice" and "discount" together*
-    beforePrice: price before discount
-    discount: discount rate
-*/
 function ProductList(props) {
     const {itemList,number} = props
+    const navigate = useNavigate()
 
     return (
         <PordList x={number}>
-            {itemList.map((item) => {
+            {itemList.map((item,index) => {
                 return (
-                    <li key={item.index}>
-                        <div className="ImgDiv"><img src={item.img} alt={item.name} /></div>
+                    <li key={index}>
+                        <div className="ImgDiv"><img src={item.image} onClick={() => {navigate(`/product/${item.id}`)}} alt={item.name} /></div>
                         <div>
                             <div className="ProdInfo">
-                                <img className="Star" src="image/main/star.jpg" alt="별"/>
+                                <img className="Star" src="/image/main/star.jpg" alt="별"/>
                                 <span className="Grade">{item.grade}</span>
                                 <span className="Reviews">({item.reviews})</span>
                             </div>
-                            <div className="ProdName">{item.name}</div>
-                            <span className="ProdPrice"><strong>{item.price}</strong>원</span>
-                            {item.beforePrice != null && <>
-                                <span className="ProdPrice BeforePrice">{item.beforePrice}</span>
-                                <span className="Discount"><strong>{item.discount}</strong>%</span>
+                            <div className="ProdName" onClick={() => {navigate(`/product/${item.id}`)}}>{item.name}</div>
+                            {item.sale == null && <>
+                                <span className="ProdPrice"><strong>{item.price.toLocaleString("ko-KR")}</strong>원</span>
+                            </>}
+                            {item.sale != null && <>
+                                <span className="ProdPrice"><strong>{(Math.round((item.price - (item.price * (item.sale / 100))) / 100) * 100).toLocaleString("ko-KR")}</strong>원</span>
+                                <span className="ProdPrice BeforePrice">{item.price.toLocaleString("ko-KR")}원</span>
+                                <span className="Discount"><strong>{item.sale}</strong>%</span>
                             </> }
                         </div>
                     </li>

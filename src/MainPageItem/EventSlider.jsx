@@ -35,8 +35,8 @@ function EventSlider(props) {
                     return <SliderImg src={item.src} alt={item.alt} key={item.index} x={slider} />
                 })}
             </SlideBox>
-            <SlideButton onClick={ClickPrev} className="prev_button" x={slider}><img src="image/button/왼쪽.png" alt="왼쪽" /></SlideButton>
-            <SlideButton onClick={ClickNext} className="next_button" x={slider}><img src="image/button/오른쪽.png" alt="오른쪽" /></SlideButton>
+            <SlideButton onClick={ClickPrev} className="prev_button" x={slider}><img src="image/button/left.png" alt="왼쪽" /></SlideButton>
+            <SlideButton onClick={ClickNext} className="next_button" x={slider}><img src="image/button/right.png" alt="오른쪽" /></SlideButton>
         </SlideSection>
     )
 }
@@ -107,47 +107,47 @@ const SlideButton = styled.button`
 
 const sliderList = [
     {
-        src: "image/event/맛있닭 다이어트도시락 카레볶음밥-1.jpg",
+        src: "/product/image/1_0.jpg",
         alt: "카레볶음밥",
         index: 0
     },
     {
-        src: "image/event/아임웰 곤약 닭가슴살 잡채볶음밥-1.jpg",
+        src: "/product/image/2_0.jpg",
         alt: "잡채볶음밥",
         index: 1
     },
     {
-        src: "image/event/비건 도시락 콩불구이 전주비빔밥-1.jpg",
+        src: "/product/image/3_0.jpg",
         alt: "전주비빔밥",
         index: 2
     },
     {
-        src: "image/event/맛있닭 닭가슴살스테이크 오리지널-2.jpg",
+        src: "/product/image/4_0.jpg",
         alt: "닭가슴살 스테이크",
         index: 3
     },
     {
-        src: "image/event/맛있닭 스팀닭가슴살 오리지널-3.jpg",
+        src: "/product/image/5_0.jpg",
         alt: "스팀닭가슴살 오리지널",
         index: 4
     },
     {
-        src: "image/event/맛있닭 스팀닭가슴살 고추맛-3.jpg",
+        src: "/product/image/6_0.jpg",
         alt: "스팀닭가슴살 고추맛",
         index: 5
     },
     {
-        src: "image/event/맛있닭 스팀닭가슴살 마늘맛-3.jpg",
+        src: "/product/image/7_0.jpg",
         alt: "스팀닭가슴살 마늘맛",
         index: 6
     },
     {
-        src: "image/event/아임닭 수비드닭가슴살 칠리페퍼-1.jpg",
+        src: "/product/image/8_0.jpg",
         alt: "수비드닭가슴살 칠리페퍼",
         index: 7
     },
     {
-        src: "image/event/프레쉬홈 이지 샐러드 Atype-1.jpg",
+        src: "/product/image/9_0.jpg",
         alt: "이지 샐러드",
         index: 8
     },

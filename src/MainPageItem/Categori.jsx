@@ -34,7 +34,6 @@ const CateBox = styled.div`
         background-color: #2e954e;
         color: white;
         & > nav {
-            display: block;
             height: 300px;
             text-align: center;
             border: 1px solid #2e954e;
@@ -44,7 +43,8 @@ const CateBox = styled.div`
 `
 
 const OnMouseCate = styled.nav`
-    display: none;
+    height: 0;
+    transition: 0.5s;
 
     li {
         display: flex;
@@ -80,13 +80,13 @@ function Categori(props){
                 <p>카테고리</p>
                 <OnMouseCate>
                     <ul>
-                        <li onClick={() =>  {navigate("/chickenBreast")}}>닭가슴살</li>
-                        <li>간편식</li>
-                        <li>도시락</li>
-                        <li>샐러드</li>
-                        <li>비건</li>
-                        <li>프로틴</li>
-                        <li>건강식품</li>
+                        <li onClick={() => {navigate("/categori/01")}}>닭가슴살</li>
+                        <li onClick={() => {navigate("/categori/02")}}>간편식</li>
+                        <li onClick={() => {navigate("/categori/03")}}>도시락</li>
+                        <li onClick={() => {navigate("/categori/04")}}>샐러드</li>
+                        <li onClick={() => {navigate("/categori/05")}}>비건</li>
+                        <li onClick={() => {navigate("/categori/06")}}>프로틴</li>
+                        <li onClick={() => {navigate("/categori/07")}}>건강식품</li>
                     </ul>
                 </OnMouseCate>
             </CateBox>

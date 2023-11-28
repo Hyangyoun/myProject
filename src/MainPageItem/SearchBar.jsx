@@ -47,7 +47,7 @@ function SearchBar(props) {
     return (
         <Serchbox>
             <TextInput type="text" placeholder="상품명 입력"></TextInput>
-            <SearchBtn type="button"><img src="image/main/search.jpg" alt="검색" /></SearchBtn>
+            <SearchBtn type="button"><img src="/image/main/search.jpg" alt="검색" /></SearchBtn>
         </Serchbox>
     )
 }
